@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
-		title: 'Gatsby - Bulma CSS Starter',
-		author: 'Aman Mittal',
+		title: 'Espace KGnaar',
+		author: 'Thibaud Larrière',
 		imageUrl: 'https://i.imgur.com/Vz81GEl.png',
 		description: 'A Project to bootstrap your next Gatsby + Bulma site.',
 		keywords: `Web developer, Web, Developer, CSS, HTML, JS, Javascript, Gatsby, Bulma Developer, CSS3, HTML5, Seo, Starter`,
