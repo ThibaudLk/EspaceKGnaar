@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react'
 
-import './style.scss';
-import Helmet from './helmet';
-import Header from './header';
-import Midsection from './midsection';
-import Footer from './footer';
+import './style.scss'
+import SEO from './seo'
+import Navbar from './navbar'
+import Footer from './footer'
 
-const Layout = ({ children }) => (
-	<div>
-		<Helmet />
-		<Header />
-		<Midsection />
-		<Footer />
-	</div>
-);
+class Layout extends Component {
+	constructor(props) {
+		super(props)
+		this.state = { isActive: false }
+		this.toggleNavbar = this.toggleNavbar.bind(this)
+	}
 
-export default Layout;
+	toggleNavbar() {
+		this.setState({ isActive: !this.state.isActive })
+	}
+	render() {
+		return (
+			<div>
+				<SEO title="Temporaire" />
+				<Navbar isActive={this.state.isActive} toggleNavbar={() => this.toggleNavbar()} />
+					{this.props.children}
+				<Footer />
+			</div>
+		)
+	}
+}
+
+export default Layout

@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  repo: ThibaudLk/EspaceKGnaar
+
+media_folder: src/images
+public_folder: /images
+
+collections:
+
+  # Collection representant les pages du site
+  - name: "pages"
+    label: "Pages"
+    folder: mdPages
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - { label: "Titre", name: "title", widget: string }
+      - { label: "Nom", name: "nom", widget: string }
+      - { label: Image, name: image, widget: image }
+      - { label: "Body", name: "body", widget: markdown }
+      

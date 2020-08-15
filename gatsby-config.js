@@ -21,21 +21,19 @@ module.exports = {
 				path: `${__dirname}/src/images`
 			}
 		},
+		{
+      resolve: `gatsby-source-filesystem`,
+      options: { 
+        name: `mdPages`, 
+        path: `${__dirname}/mdPages/` 
+      },
+    },
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-sharp',
 		{
-			resolve: `gatsby-plugin-manifest`,
-			options: {
-				name: 'Makefolio',
-				short_name: 'Makefolio',
-				start_url: '/',
-				background_color: '#2980b9',
-				theme_color: '#2980b9',
-				display: 'standalone',
-				icon: 'src/images/gatsby-icon.png',
-				orientation: 'portrait'
-			}
+			resolve: `gatsby-transformer-remark`
 		},
+		`gatsby-plugin-netlify-cms`,
 		`gatsby-plugin-sass`,
 		{
 			resolve: `gatsby-plugin-google-analytics`,
@@ -45,7 +43,20 @@ module.exports = {
 				anonymize: true
 			}
 		},
-		`gatsby-plugin-sitemap`
+		`gatsby-plugin-sitemap`,
+		{
+			resolve: `gatsby-plugin-manifest`,
+			options: {
+				name: 'Espace KGnaar',
+				short_name: 'KGnaar',
+				start_url: '/',
+				background_color: '#F7F3E8',
+				theme_color: '#1D1D1D',
+				display: 'standalone',
+				icon: 'src/images/logo.png',
+				orientation: 'portrait'
+			}
+		},
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.app/offline
 		// 'gatsby-plugin-offline',

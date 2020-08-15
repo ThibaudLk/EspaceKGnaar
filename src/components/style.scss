@@ -27,3 +27,15 @@
 		color: $secondary-color;
 	}
 }
+
+/* faire ressembler les boutons à des liens */
+.link-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.link-button:hover,
+.link-button:focus {
+text-decoration: none;
+}

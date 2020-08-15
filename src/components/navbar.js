@@ -1,39 +1,64 @@
-import React from 'react';
-import { FaGithub } from 'react-icons/fa';
+import React from 'react'
+import Img from "gatsby-image"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
-import './style.scss';
-import gatsbyLogo from '../images/gatsby-icon.png';
-import bulmaLogo from '../images/bulma-logo.png';
+import './style.scss'
 
-const Navbar = () => (
-	<div className="hero-head is-hidden-mobile">
-		<nav className="navbar">
-			<div className="container">
-				<div className="navbar-brand">
-					<a
-						className="navbar-item"
-						href="/"
-					>
-						<img src={gatsbyLogo} alt="Logo-1" />
-						<img src={bulmaLogo} alt="Logo-2" />
-					</a>
-				</div>
-				<div id="navbarMenuHeroA" className="navbar-menu">
-					<div className="navbar-end">
-						<span className="navbar-item">
-							<a  className="button is-danger is-inverted"
-								href="https://github.com/app-generator/gatsby-starter-bulma-css">
-								<span className="icon">
-									<FaGithub size="fa-2x" />
-								</span>
-								<span>Get Sources</span>
-							</a>
-						</span>
-					</div>
+const Navbar = ({ toggleNavbar, isActive }) => {
+	const data = useStaticQuery(graphql`
+    query NavbarQuery {
+			headerImage: file(relativePath: { eq: "logo.png" }) {
+				childImageSharp {
+					fixed(width: 64, height: 64) {
+						...GatsbyImageSharpFixed_withWebp
+					}
+				}
+			},
+			allPages: allMarkdownRemark(
+				filter: { fileAbsolutePath: { glob: "**/mdPages/*.md" } }
+				) {
+				edges {
+					node {
+						frontmatter {
+							title
+						}
+						fields {
+							slug
+						}
+					}
+				}
+			}
+		}
+	`)
+
+	return (
+		<nav className="navbar" role="navigation" aria-label="main navigation">
+			<div className="navbar-brand">
+				<Link to="/">
+					<Img style={{ margin: 8 }} fixed={data.headerImage.childImageSharp.fixed} />
+				</Link>
+
+				<button type="button" className={`navbar-burger burger link-button ${isActive ? 'is-active' : ''}`} aria-label="menu" aria-expanded="false" data-target="navbarTop" onClick={toggleNavbar}>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</button>
+			</div>
+
+			<div id="navbarTop" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
+				<div className="navbar-start">
+					{data.allPages.edges.map(({ node }) =>
+						<Link to={node.fields.slug} className="navbar-item">
+							{node.frontmatter.title}
+      			</Link>
+					)}
+					<Link to="/" className="navbar-item">
+						Home
+      </Link>
 				</div>
 			</div>
 		</nav>
-	</div>
-);
+	)
+}
 
-export default Navbar;
+export default Navbar

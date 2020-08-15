@@ -2,7 +2,6 @@ import React from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { StaticQuery, graphql } from 'gatsby';
 import './style.scss';
-import Emoji from './emoji';
 
 const Footer = () => (
 	<StaticQuery
