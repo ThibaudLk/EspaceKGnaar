@@ -19,3 +19,6 @@ collections:
       - { label: Image, name: image, widget: image }
       - { label: "Body", name: "body", widget: markdown }
       
+
+      # Gatsby Image with Netlify CMS - Field “image” must not have a selection since type “String” has no subfields
+      # => npm cache clean --force

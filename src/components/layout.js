@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import './style.scss'
-import SEO from './seo'
 import Navbar from './navbar'
 import Footer from './footer'
 
@@ -18,7 +17,6 @@ class Layout extends Component {
 	render() {
 		return (
 			<div>
-				<SEO title="Temporaire" />
 				<Navbar isActive={this.state.isActive} toggleNavbar={() => this.toggleNavbar()} />
 					{this.props.children}
 				<Footer />
