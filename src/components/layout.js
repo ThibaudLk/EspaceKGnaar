@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import './style.scss'
+import '../style/style.scss'
 import Navbar from './navbar'
 import Footer from './footer'
 

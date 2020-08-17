@@ -1,7 +1,6 @@
-import React from 'react';
-import { FaGithub } from 'react-icons/fa';
-import { StaticQuery, graphql } from 'gatsby';
-import './style.scss';
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import '../style/style.scss'
 
 const Footer = () => (
 	<StaticQuery

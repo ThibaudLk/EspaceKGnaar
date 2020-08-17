@@ -1,8 +1,8 @@
 // VARIABLES
-
-$primary-color: #F7F3E8;
+$white-color: #fff;
+$primary-color: $white-color;
+$primary: $white-color;
 $secondary-color: #1D1D1D;
 $body-font-size: 1.25em;
 
-$body-background-color: $primary-color;
 $body-color: $secondary-color;
