@@ -60,13 +60,19 @@ module.exports = {
 		`gatsby-plugin-netlify-cms`,
 		`gatsby-plugin-sass`,
 		{
-			resolve: `gatsby-plugin-google-analytics`,
-			options: {
-				trackingId: 'UA-XXXXXXXX-X',
-				// Setting this parameter is optional (requried for some countries such as Germany)
-				anonymize: true
-			}
-		},
+      resolve: "gatsby-plugin-prefetch-google-fonts",
+      options: {
+        fonts: [
+          {
+            family: "Cairo",
+          },
+          {
+            family: "Open Sans",
+            variants: ["400", "700"]
+          },
+        ],
+      },
+    },
 		`gatsby-plugin-sitemap`,
 		{
 			resolve: `gatsby-plugin-manifest`,

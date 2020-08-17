@@ -12,13 +12,16 @@ const PageTemplate = ({ data }) => {
 
   return (
     <Layout>
-    <SEO title={title} description={data.markdownRemark.excerpt} />
-      La page {nom}
-      <h1> {title} </h1>
-      {/* {image && (
+      <SEO title={title} description={data.markdownRemark.excerpt} />
+      <div class="container is-widescreen">
+        La page {nom}
+        <h1 className="title"> {title} </h1>
+        <img src={image} alt={image} />
+        {/* {image && (
         <Img style={{ maxHeight: 480 }} fluid={image.childImageSharp.fluid} />
       )} */}
-      <div dangerouslySetInnerHTML={{ __html }} />
+        <div dangerouslySetInnerHTML={{ __html }} />
+      </div>
     </Layout>
   )
 }
@@ -30,6 +33,7 @@ query($slug : String) {
       frontmatter {
         title
         nom
+        image
       }
     }
   }

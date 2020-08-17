@@ -1,18 +1,33 @@
 // Importing variables
+// https://bulma.io/documentation/customize/variables/
 @import './variables.scss';
 
 // Importing Bulma from node_modules
 @import '~bulma/bulma.sass';
+
+// K = Blade Runner Movie Font
+// G = Bahnschrift SemiBold
+// NAAR = Bernard MT Condensed
 
 .gradientBg {
 	display: flex;
 	background: linear-gradient(to right, $primary-color, $secondary-color);
 }
 
+.container {
+	background-color: $white;
+	padding: $pre-padding;
+	min-height: 90vh;
+}
+
 .center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.navbar {
+	box-shadow: 0 2px 8px -2px gray;
 }
 
 .footer {

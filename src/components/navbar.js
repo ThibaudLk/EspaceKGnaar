@@ -19,6 +19,7 @@ const Navbar = ({ toggleNavbar, isActive }) => {
 				) {
 				edges {
 					node {
+						id
 						frontmatter {
 							title
 						}
@@ -48,13 +49,10 @@ const Navbar = ({ toggleNavbar, isActive }) => {
 			<div id="navbarTop" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
 				<div className="navbar-start">
 					{data.allPages.edges.map(({ node }) =>
-						<Link to={node.fields.slug} className="navbar-item">
+						<Link key={node.id} to={node.fields.slug} className="navbar-item">
 							{node.frontmatter.title}
       			</Link>
 					)}
-					<Link to="/" className="navbar-item">
-						Home
-      </Link>
 				</div>
 			</div>
 		</nav>
