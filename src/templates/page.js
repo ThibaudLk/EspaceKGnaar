@@ -15,9 +15,9 @@ const PageTemplate = ({ data }) => {
     <SEO title={title} description={data.markdownRemark.excerpt} />
       La page {nom}
       <h1> {title} </h1>
-      {image && (
+      {/* {image && (
         <Img style={{ maxHeight: 480 }} fluid={image.childImageSharp.fluid} />
-      )}
+      )} */}
       <div dangerouslySetInnerHTML={{ __html }} />
     </Layout>
   )
@@ -30,13 +30,6 @@ query($slug : String) {
       frontmatter {
         title
         nom
-        image {
-          childImageSharp {
-            fluid(maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
       }
     }
   }

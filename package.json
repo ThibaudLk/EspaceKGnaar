@@ -4,6 +4,7 @@
 	"version": "1.0.0",
 	"author": "Thibaud Larrière",
 	"dependencies": {
+		"@raae/gatsby-remark-oembed": "^0.1.1",
 		"bulma": "^0.7.4",
 		"ftp-deploy": "^2.3.3",
 		"gatsby": "^2.3.25",
@@ -16,6 +17,8 @@
 		"gatsby-plugin-sass": "^2.0.11",
 		"gatsby-plugin-sharp": "^2.0.35",
 		"gatsby-plugin-sitemap": "^2.2.0",
+		"gatsby-remark-external-links": "^0.0.4",
+		"gatsby-remark-images": "^3.3.25",
 		"gatsby-source-filesystem": "^2.0.29",
 		"gatsby-transformer-remark": "^2.8.28",
 		"gatsby-transformer-sharp": "^2.1.18",

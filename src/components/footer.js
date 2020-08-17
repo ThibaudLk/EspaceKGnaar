@@ -23,19 +23,10 @@ const Footer = () => (
 				<div className="content has-text-centered">
 					<article className="media center">
 
-						<span className="icon">
-							<a href="https://github.com/app-generator/gatsby-starter-bulma-css">
-								<FaGithub size="fa-2x" color="black" />
-							</a>
-						</span>
+						Footer à personnaliser
 
 					</article>
-					<br />
-					<p className="is-size-6">
-						Initialy coded by (@amahimself) using{' '}
-						<a href={data.site.siteMetadata.gatsby}>Gatsby</a> +{' '}
-						<a href={data.site.siteMetadata.bulma}>Bulma</a>
-					</p>
+
 				</div>
 			</footer>
 		)}

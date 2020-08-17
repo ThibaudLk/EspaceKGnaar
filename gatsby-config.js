@@ -13,7 +13,8 @@ module.exports = {
 		siteUrl: `https://gatsby-starter-bulma-css.appseed.us`
 	},
 	plugins: [
-		'gatsby-plugin-react-helmet',
+		'gatsby-transformer-sharp',
+		'gatsby-plugin-sharp',
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -28,11 +29,34 @@ module.exports = {
         path: `${__dirname}/mdPages/` 
       },
     },
-		'gatsby-transformer-sharp',
-		'gatsby-plugin-sharp',
 		{
-			resolve: `gatsby-transformer-remark`
+			resolve: `gatsby-transformer-remark`,
+			options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1280,
+            },
+          },
+          {
+						resolve: `gatsby-remark-external-links`,
+            options: {
+              target: `_blank`
+            }
+					},
+					{
+            resolve: `@raae/gatsby-remark-oembed`,
+            options: {
+              providers: {
+                include: ['Twitter', 'YouTube']
+              }
+            }
+          }
+				],
+			},
 		},
+		'gatsby-plugin-react-helmet',
 		`gatsby-plugin-netlify-cms`,
 		`gatsby-plugin-sass`,
 		{
